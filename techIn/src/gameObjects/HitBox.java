@@ -8,9 +8,9 @@ public class HitBox {
     private final int width = 110;
     private final int height = 60;
 
-    private Fighter player;
+    private Player player;
 
-    public HitBox(Fighter player) {
+    public HitBox(Player player) {
 
         this.player = player;
     }

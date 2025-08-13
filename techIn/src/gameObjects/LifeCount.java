@@ -1,6 +1,6 @@
 package gameObjects;
 
-import GameConstants;
+import utility.GameConstants;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

@@ -3,6 +3,7 @@ package gameObjects;
 
 import utility.Launcher;
 import utility.GameConstants;
+import utility.PlayerControl;
 import utility.SoundHandler;
 
 import javax.imageio.ImageIO;
@@ -17,8 +18,8 @@ import java.util.Objects;
 public class GameWorld extends JPanel implements Runnable {
 
     private BufferedImage world;
-    private Fighter p1;
-    private Fighter p2;
+    private Player p1;
+    private Player p2;
     private final Launcher lf;
     private BufferedImage background;
 
@@ -92,9 +93,9 @@ public class GameWorld extends JPanel implements Runnable {
             ex.printStackTrace();
         }
 
-        p1 = new Fighter(50, GameConstants.PLAYER_STARTING_Y, 0, 0, (short) 0, p1Img, "player1");
+        p1 = new Player(50, GameConstants.PLAYER_STARTING_Y, 0, 0, (short) 0, p1Img, "player1");
         this.lf.getJf().addKeyListener(
-            new FighterControl(p1, KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_C, KeyEvent.VK_V)
+            new PlayerControl(p1, KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_C, KeyEvent.VK_V)
         );
 
         BufferedImage p2Img = null;
@@ -112,9 +113,9 @@ public class GameWorld extends JPanel implements Runnable {
             ex.printStackTrace();
         }
 
-        p2 = new Fighter(GameConstants.GAME_SCREEN_WIDTH - 265, GameConstants.PLAYER_STARTING_Y, 0, 0, (short) 0, p2Img, "player2", p1);
+        p2 = new Player(GameConstants.GAME_SCREEN_WIDTH - 265, GameConstants.PLAYER_STARTING_Y, 0, 0, (short) 0, p2Img, "player2", p1);
         this.lf.getJf().addKeyListener(
-                new FighterControl(p2, KeyEvent.VK_O, KeyEvent.VK_L, KeyEvent.VK_K, KeyEvent.VK_SEMICOLON, KeyEvent.VK_PERIOD, KeyEvent.VK_SLASH)
+                new PlayerControl(p2, KeyEvent.VK_O, KeyEvent.VK_L, KeyEvent.VK_K, KeyEvent.VK_SEMICOLON, KeyEvent.VK_PERIOD, KeyEvent.VK_SLASH)
         );
         p1.setOtherPlayer(p2);
     }

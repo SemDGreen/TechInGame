@@ -8,12 +8,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class EndGamePanel extends JPanel {
+public class EndScreen extends JPanel {
 
     private BufferedImage menuBackground;
     private final Launcher lf;
 
-    public EndGamePanel(Launcher lf) {
+    public EndScreen(Launcher lf) {
         this.lf = lf;
 
         if (this.lf.getGameWorld().p1LifeCheck().getLivesNum() <= 1) {

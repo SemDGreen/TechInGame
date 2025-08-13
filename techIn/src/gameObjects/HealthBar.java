@@ -1,12 +1,11 @@
 package gameObjects;
 
+import utility.GameConstants;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
-
-import GameConstants;
-
-import javax.imageio.ImageIO;
 
 public class HealthBar {
 

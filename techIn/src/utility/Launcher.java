@@ -1,8 +1,8 @@
 package utility;
 
 import gameObjects.GameWorld;
-import screens.EndGamePanel;
-import screens.StartMenuPanel;
+import screens.EndScreen;
+import screens.StartScreen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,14 +49,14 @@ public class Launcher {
          * start panel will be used to view the start menu. It will contain
          * two buttons start and exit.
          */
-        JPanel startPanel = new StartMenuPanel(this); // create a new start panel
+        JPanel startPanel = new StartScreen(this); // create a new start panel
         this.gamePanel = new GameWorld(this); // create a new game panel
         this.gamePanel.InitializeGame(); // initialize game, but DO NOT start game
         /*
          * end panel is used to show the end game panel. it will contain
          * two buttons restart and exit.
          */
-        JPanel endPanel = new EndGamePanel(this);
+        JPanel endPanel = new EndScreen(this);
 
         //SoundHandler.playSound(GameConstants.menuThemeName);
 

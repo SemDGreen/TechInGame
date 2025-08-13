@@ -8,12 +8,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class StartMenuPanel extends JPanel {
+public class StartScreen extends JPanel {
 
     private BufferedImage menuBackground;
     private final Launcher lf;
 
-    public StartMenuPanel(Launcher lf) {
+    public StartScreen(Launcher lf) {
         this.lf = lf;
         try {
 
