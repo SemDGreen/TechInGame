@@ -29,9 +29,6 @@ public class HealthBar {
                     }
                 }
 
-                x = GameConstants.P1_HEALTHBAR_X;
-                y = GameConstants.P1_HEALTHBAR_Y;
-
             }
             case  "player2" -> {
 
@@ -44,9 +41,6 @@ public class HealthBar {
                         throw new RuntimeException(e);
                     }
                 }
-
-                x = GameConstants.P2_HEALTHBAR_X;
-                y = GameConstants.P2_HEALTHBAR_Y;
             }
         }
 

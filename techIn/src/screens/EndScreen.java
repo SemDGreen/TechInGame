@@ -16,29 +16,6 @@ public class EndScreen extends JPanel {
     public EndScreen(Launcher lf) {
         this.lf = lf;
 
-        if (this.lf.getGameWorld().p1LifeCheck().getLivesNum() <= 1) {
-            try {
-
-
-                menuBackground = ImageIO.read(this.getClass().getClassLoader().getResource("Winners.png"));
-            } catch (IOException e) {
-                System.out.println("Error cant read menu background");
-                e.printStackTrace();
-                System.exit(-3);
-            }
-        }
-        else {
-            try {
-
-
-                menuBackground = ImageIO.read(this.getClass().getClassLoader().getResource("Winners2.png"));
-            } catch (IOException e) {
-                System.out.println("Error cant read menu background");
-                e.printStackTrace();
-                System.exit(-3);
-            }
-        }
-
         this.setBackground(Color.BLACK);
         this.setLayout(null);
 

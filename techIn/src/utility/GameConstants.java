@@ -33,6 +33,11 @@ public class GameConstants {
     public static final int RES_X_4K = 3840;
     public static final int RES_Y_4K = 2160;
 
+    //public static final int FIGHTER_MIN_DIST_FROM_FLOOR;
+    //public static final int FIGHTER_MIN_DIST_FROM_WALL;
+
+    public static final int GRAVITY = 1;
+
     //RESOURCE SHORTCUTS
     public static final String menuThemeName = "techinMenuThemeMusic.wav";
     public static final String fightThemeName = "techinFightThemeMusic.wav";

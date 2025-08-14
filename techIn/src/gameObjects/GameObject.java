@@ -11,6 +11,8 @@ public abstract class GameObject {
     private int x;
     private int y;
 
+    private BufferedImage displayedImage;
+
     private AnimationHandler animationHandler;
     private Map<String, BufferedImage[]> animations;
 

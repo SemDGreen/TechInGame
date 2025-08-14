@@ -93,7 +93,7 @@ public class Player {
         keysPressed.remove(dir);
     }
 
-    void update() {
+    public void update() {
 
         checkHit();
 
@@ -380,8 +380,8 @@ public class Player {
         this.y += this.vy;
         this.vy += GameConstants.GRAVITY;
 
-        if (this.y >= GameConstants.GAME_SCREEN_HEIGHT - FIGHTER_DIST_FROM_EDGE_X) {
-            this.y = GameConstants.GAME_SCREEN_HEIGHT - FIGHTER_DIST_FROM_EDGE_X;
+        if (this.y >= GameConstants.RES_Y_16X9 - FIGHTER_DIST_FROM_EDGE_X) {
+            this.y = GameConstants.RES_Y_4K - FIGHTER_DIST_FROM_EDGE_X;
             this.vy = GameConstants.GRAVITY;
             this.vx = 0;
             this.jumping = false;
@@ -399,17 +399,17 @@ public class Player {
         if (this.x < FIGHTER_DIST_FROM_EDGE_Y_LEFT) {
             this.x = FIGHTER_DIST_FROM_EDGE_Y_LEFT;
         }
-        if (this.x >= GameConstants.GAME_SCREEN_WIDTH - FIGHTER_DIST_FROM_EDGE_Y_RIGHT) {
-            this.x = GameConstants.GAME_SCREEN_WIDTH - FIGHTER_DIST_FROM_EDGE_Y_RIGHT;
+        if (this.x >= GameConstants.RES_X_16X9 - FIGHTER_DIST_FROM_EDGE_Y_RIGHT) {
+            this.x = GameConstants.RES_X_16X9 - FIGHTER_DIST_FROM_EDGE_Y_RIGHT;
         }
         if (this.y < 30) {
             this.y = 30;
         }
-        if (this.y >= GameConstants.GAME_SCREEN_HEIGHT - FIGHTER_DIST_FROM_EDGE_X && !this.crouching) {
-            this.y = GameConstants.GAME_SCREEN_HEIGHT - FIGHTER_DIST_FROM_EDGE_X;
+        if (this.y >= GameConstants.RES_Y_16X9 - FIGHTER_DIST_FROM_EDGE_X && !this.crouching) {
+            this.y = GameConstants.RES_Y_16X9 - FIGHTER_DIST_FROM_EDGE_X;
         }
-        if (this.y >= GameConstants.GAME_SCREEN_HEIGHT - FIGHTER_DIST_FROM_EDGE_X && this.crouching || this.kicking) {
-            this.y = GameConstants.GAME_SCREEN_HEIGHT - FIGHTER_DIST_FROM_EDGE_X + 70;
+        if (this.y >= GameConstants.RES_Y_16X9 - FIGHTER_DIST_FROM_EDGE_X && this.crouching || this.kicking) {
+            this.y = GameConstants.RES_Y_16X9 - FIGHTER_DIST_FROM_EDGE_X + 70;
             if (this.kicking) {
                 this.y -= 23;
             }
@@ -466,7 +466,7 @@ public class Player {
         return this.y;
     }
 
-    void drawImage(Graphics g) {
+    public void drawImage(Graphics g) {
 
         AffineTransform rotation = AffineTransform.getTranslateInstance(this.x, this.y);
         rotation.rotate(Math.toRadians(this.angle), this.img.getWidth() / 2.0, this.img.getHeight() / 2.0);
@@ -486,12 +486,12 @@ public class Player {
         Graphics2D g2d = (Graphics2D) g;
         if ("player1".equals(this.player)) {
             for (int i = 0; i < GameConstants.MAX_LIVES; i++) {
-                g2d.drawImage(temp[i], GameConstants.P1_LIFE_X + (i * 69), GameConstants.P1_LIFE_Y, null);
+                g2d.drawImage(temp[i], GameConstants.RES_X_16X9 + (i * 69), GameConstants.RES_Y_16X9, null);
             }
         }
         if ("player2".equals(this.player)) {
             for (int i = 0; i < GameConstants.MAX_LIVES; i++) {
-                g2d.drawImage(temp[i], GameConstants.GAME_SCREEN_WIDTH - (GameConstants.P1_LIFE_X + (i * 69)) - 79, GameConstants.P1_LIFE_Y, null);
+                g2d.drawImage(temp[i], GameConstants.RES_X_16X9 - (GameConstants.RES_X_16X9 + (i * 69)) - 79, GameConstants.RES_Y_16X9, null);
             }
         }
 

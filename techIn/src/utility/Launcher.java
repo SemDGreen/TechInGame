@@ -1,6 +1,6 @@
 package utility;
 
-import gameObjects.GameWorld;
+import screens.GameWorld;
 import screens.EndScreen;
 import screens.StartScreen;
 
@@ -79,10 +79,10 @@ public class Launcher {
         this.jf.setVisible(false); // hide the JFrame
         switch (type) {
             case "start", "end" -> {
-                this.jf.setSize(GameConstants.OTHER_MENU_SCREEN_WIDTH, GameConstants.OTHER_MENU_SCREEN_HEIGHT);
+                this.jf.setSize(GameConstants.RES_X_16X9, GameConstants.RES_Y_16X9);
             }
             case "gameObjects" -> {
-                this.jf.setSize(GameConstants.GAME_SCREEN_WIDTH, GameConstants.GAME_SCREEN_HEIGHT);
+                this.jf.setSize(GameConstants.RES_X_16X9, GameConstants.RES_Y_16X9);
                 (new Thread(this.gamePanel)).start();
             }
         }

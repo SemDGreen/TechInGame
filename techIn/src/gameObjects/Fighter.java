@@ -100,4 +100,8 @@ public class Fighter extends GameObject {
 
     }
 
+    private void checkIdleCollision() {
+
+    }
+
 }
